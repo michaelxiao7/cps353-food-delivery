@@ -1,0 +1,12 @@
+.Screen {
+    margin-top: 8vh;
+    margin-left: 15vh;
+    margin-right: 15vh;
+}
+
+.Title {
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 60px;
+}
