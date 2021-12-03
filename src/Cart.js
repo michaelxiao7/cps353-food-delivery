@@ -1,6 +1,10 @@
 import React from 'react';
 import { useCart } from "react-use-cart";
 
+/* A lot of the following code came from this lovely resource:
+https://www.npmjs.com/package/react-use-cart
+Excellent documentation! */
+
 const Cart = () => {
     const {
         isEmpty,
@@ -11,7 +15,6 @@ const Cart = () => {
         updateItemQuantity,
         removeItem,
         emptyCart,
-        setItems,
         } = useCart();
     if (isEmpty) return <h1 className="text-center">Your Cart is Empty</h1>
     return (
@@ -19,13 +22,13 @@ const Cart = () => {
             <div className="row justify-content-center">
                 <div className="col-12">
                     <h5>Cart ({totalUniqueItems}) Total Items: ({totalItems})</h5>
-                    <table className="table table-light table-hover text-center m-0">
+                    <table className="table table-hover text-center m-0 Cart">
                         <tbody>
                             {items.map((item, index)=>{
                                 return(
                                     <tr key={index}>
                                         <td>
-                                            <img src={item.img} style={{height: '6rem'}} />
+                                            <img className="Cart" src={item.img} style={{height: '6rem'}} />
                                         </td>
                                         <td>{item.title}</td>
                                         <td>{item.price}</td>
@@ -59,7 +62,10 @@ const Cart = () => {
                         className="btn btn-danger m-2"
                         onClick={() => emptyCart()}
                         >Clear Cart</button>
-                        <button className="btn btn-primary m-2">Pay Now</button>
+                    <button 
+                        className="btn btn-primary m-2"
+                        // onClick={() => navigation.navigate('Userform')}
+                        >Pay Now</button>
                 </div>
             </div>
         </section>

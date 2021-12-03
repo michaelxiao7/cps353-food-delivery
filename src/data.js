@@ -1,7 +1,9 @@
 import img1 from './img/img1.png'
 import img2 from './img/img2.png'
 import img3 from './img/img3.png'
-import { useCart } from "react-use-cart"
+
+/* Just a nice place to store the food data
+This makes the entire application scalable! */
 
 const data = {
     productData:[
