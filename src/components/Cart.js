@@ -1,5 +1,9 @@
 import React from 'react';
 import { useCart } from "react-use-cart";
+import '../App.css';
+import { CheckOutButton } from '../App.js';
+
+
 
 /* A lot of the following code came from this lovely resource:
 https://www.npmjs.com/package/react-use-cart
@@ -62,12 +66,9 @@ const Cart = () => {
                         className="btn btn-danger m-2"
                         onClick={() => emptyCart()}
                         >Clear Cart</button>
-                    <button 
-                        className="btn btn-primary m-2"
-                        // onClick={() => navigation.navigate('Userform')}
-                        >Pay Now</button>
                 </div>
             </div>
+            <CheckOutButton />
         </section>
     );
 };

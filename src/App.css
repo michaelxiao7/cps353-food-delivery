@@ -7,12 +7,21 @@ html, .Container {
     background-size: cover;
 }
 
+.Card, .Cart {
+    background-color: cornsilk;
+}
+
+.btn-danger {
+    background-color: tomato !important;
+}
+
+.btn-info {
+    background-color: cornflowerblue !important;
+}
+
 /*
 I may make the "Card" and "Cart" components different colors in the future.
 */
-.Card, .Cart{
-    background-color: cornsilk;
-}
 
 
 .Screen {
