@@ -1,9 +1,7 @@
 import React from 'react';
 import { useCart } from "react-use-cart";
 import '../App.css';
-import { CheckOutButton } from '../App.js';
-
-
+import { CheckoutButton } from '../App.js';
 
 /* A lot of the following code came from this lovely resource:
 https://www.npmjs.com/package/react-use-cart
@@ -68,7 +66,9 @@ const Cart = () => {
                         >Clear Cart</button>
                 </div>
             </div>
-            <CheckOutButton />
+            <CheckoutButton
+            cartTotal = {cartTotal}
+                />
         </section>
     );
 };

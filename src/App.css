@@ -1,4 +1,11 @@
 /*
+'App.css' is the css file that I used across all components.
+I don't have enough components, so I'm just using 'App.css' for all of them.
+Probably not best practice, but I'm short on time, and this helps me organize everything*/
+
+
+
+/*
 I bet my life that there's a better way to do this, but this works,
 and I'm not gonna change it if it's not a priority haha
 */
@@ -23,7 +30,6 @@ html, .Container {
 I may make the "Card" and "Cart" components different colors in the future.
 */
 
-
 .Screen {
     margin-top: 8vh;
     margin-left: 15vh;
@@ -35,4 +41,26 @@ I may make the "Card" and "Cart" components different colors in the future.
     text-decoration: underline;
     font-weight: bold;
     font-size: 60px;
+}
+
+.autocomplete {
+    margin: auto;
+    margin-bottom: 70px;
+    display: block;
+    font-size: 20px;
+    width: 25%;
+    height: 3em;
+}
+
+
+/*
+This is a really, really dumb workaround for a title element in 'Userform.js'
+Since the 'Hint' element is what autofills instead of the actual input text,
+Giving the input textbox a vertical margin messes up positioning of the autofill suggestions.
+I decided to just give the title a bit of whitespace below.
+
+Again, not the best solution, but it works for the timebeing
+*/
+.margin70 {
+    margin-bottom: 70px;
 }
