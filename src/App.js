@@ -4,6 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home';
 import Cart from './components/Cart';
 import Userform from './Userform';
+import ThankYou from './ThankYou';
 import { CartProvider } from "react-use-cart";
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
@@ -64,7 +65,28 @@ export function MenuButton() {
   );
 }
 
-function MenuScreen({ navigation }) {
+export function OrderButton() {
+  const navigation = useNavigation();
+  return (
+    <View style={styles.buttonContainer}>
+      <TouchableOpacity onPress={() => navigation.navigate("ThankYou")}>
+        <View style={{
+          width: '12em',
+          height: '5em',
+          backgroundColor: '#ffb6c1',
+          alignItems: 'center', 
+          justifyContent: 'center',
+          borderRadius: 15
+        }}
+        >
+          <Text style={styles.button}>Complete Order</Text>
+        </View>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+function MenuScreen() {
   return (
     <div className="Container Screen">
       <h1 className="Title">Welcome to Quesadillos!</h1>
@@ -76,12 +98,20 @@ function MenuScreen({ navigation }) {
   );
 }
 
-function CheckoutScreen({ navigation }) {
+function CheckoutScreen() {
   return (
     <div className="Container Screen">
       <Userform />
     </div>
     );
+}
+
+function ThankYouScreen() {
+  return (
+    <div className="Container Screen">
+      <ThankYou />
+    </div>
+  );
 }
 
 const Stack = createNativeStackNavigator();
@@ -92,6 +122,7 @@ function App() {
       <Stack.Navigator initialRouteName="Menu">
         <Stack.Screen name="Menu" component={MenuScreen} />
         <Stack.Screen name="Checkout" component={CheckoutScreen} />
+        <Stack.Screen name="ThankYou" component={ThankYouScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

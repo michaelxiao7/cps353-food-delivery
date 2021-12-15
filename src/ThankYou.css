@@ -1,0 +1,18 @@
+.Container {
+    text-align: center;
+}
+  
+.Header {
+    font-size: 64px;
+    padding-bottom: 32px;
+}
+  
+.Verse {
+    font-size: 48px;
+}
+  
+.Note {
+    padding-top: 5vh;
+    font-size: 32px;
+    font-style: italic;
+}
