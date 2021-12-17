@@ -1,0 +1,9 @@
+/* Class for the "Remove Item" button */
+.btn-danger {
+    background-color: tomato !important;
+}
+
+/* Class for the - + buttons */
+.btn-info {
+    background-color: cornflowerblue !important;
+}

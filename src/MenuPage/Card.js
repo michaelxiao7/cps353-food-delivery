@@ -1,8 +1,10 @@
 import React from 'react';
-import Items from "../Items";
+import Items from "./Items.js";
 import data from "./data";
 
-const Home = () => {
+/* The Card component of the menu (upper half of the menu) */
+
+const Card = () => {
     console.warn(data.productData)
 
     return (
@@ -28,4 +30,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Card;

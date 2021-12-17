@@ -1,11 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
+import './Userform.css';
 import { Hint } from 'react-autocomplete-hint';
-import './App.css';
-import { MenuButton, OrderButton } from './App.js';
+import { MenuButton, OrderButton } from '../App.js';
 
+/* The title + 3 text boses for the second page, after hitting Checkout
+Using <input> instead of <TextInput> or something from MUI might be bad practice
+This was the only thing I could get working in the time that I had though
+
+<Hint> is basically <input> with built-in autofill features */
 
 function Userform () {
-    const [text, setText] = useState('')
     const dorms = ["Chase", "Fulton", "Nyland", "Tavilla", "Wilson", "Evans", "Ferrin", "Bromley", "Village"];
 
     return (
@@ -15,6 +19,7 @@ function Userform () {
                 className="autocomplete"
                 placeholder="Enter your name"
             />
+            
 
             <Hint options={dorms} allowTabFill>
                 <input

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useCart } from "react-use-cart";
 
+/* Creates the items so Card.js can create the card components for the menu page */
+
 /* The incredibly useful Bootstrap v5.0 resource on cards:
 https://getbootstrap.com/docs/5.0/components/card/
 The code in this file is structured like the doc */

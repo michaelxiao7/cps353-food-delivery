@@ -3,7 +3,8 @@ import img2 from '../img/img2.png'
 import img3 from '../img/img3.png'
 
 /* Just a nice place to store the food data
-This makes the entire application scalable! */
+This makes the entire application scalable!
+This is like a database of sorts */
 
 const data = {
     productData:[

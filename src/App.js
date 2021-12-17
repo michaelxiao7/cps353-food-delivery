@@ -1,15 +1,17 @@
-import * as React from 'react';
+import React from 'react';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Home from './components/Home';
-import Cart from './components/Cart';
-import Userform from './Userform';
-import ThankYou from './ThankYou';
+import Card from './MenuPage/Card.js';
+import Cart from './MenuPage/Cart.js';
+import Userform from './CheckoutPage/Userform.js';
+import ThankYou from './ThankYouPage/ThankYou.js';
 import { CartProvider } from "react-use-cart";
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+/* There's probably a better place to store this style sheet than here
+Styles wouldn't work in the App.css though, so I had to make a sheet here*/
 const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1,
@@ -23,6 +25,10 @@ const styles = StyleSheet.create({
   }
 });
 
+/* The blue "Checkout Items" button
+It's declared as a function in App.js because the Navigation stack is in App.js
+This uses useNavigation, which is a navigation hook
+There might be a better way to do this. I'm not experienced enough to know though */
 export function CheckoutButton() {
   const navigation = useNavigation();
   return (
@@ -44,6 +50,7 @@ export function CheckoutButton() {
   );
 }
 
+/* The blue "Return to Menu" button */
 export function MenuButton() {
   const navigation = useNavigation();
   return (
@@ -65,6 +72,7 @@ export function MenuButton() {
   );
 }
 
+/* The pink "Complete Order" button */
 export function OrderButton() {
   const navigation = useNavigation();
   return (
@@ -86,18 +94,21 @@ export function OrderButton() {
   );
 }
 
+/* This is the screen the app should always start at
+Contains the Cards and Cart (upper and lower half of screen, respectively) */
 function MenuScreen() {
   return (
     <div className="Container Screen">
       <h1 className="Title">Welcome to Quesadillos!</h1>
       <CartProvider>
-        <Home />
+        <Card />
         <Cart />
       </CartProvider>
     </div>
   );
 }
 
+/* This is the "second" screen. Accessible via "Checkout Items" button */
 function CheckoutScreen() {
   return (
     <div className="Container Screen">
@@ -106,6 +117,7 @@ function CheckoutScreen() {
     );
 }
 
+/* This is the "third" screen. Contains the BibleAPI */
 function ThankYouScreen() {
   return (
     <div className="Container Screen">
@@ -114,6 +126,9 @@ function ThankYouScreen() {
   );
 }
 
+/* I'm using Stack Navigation
+This basically just means instead of navigating by changing page URL,
+I'm layering new pages on top of old ones */
 const Stack = createNativeStackNavigator();
 
 function App() {

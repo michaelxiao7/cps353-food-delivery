@@ -1,7 +1,8 @@
 import React from 'react';
 import { useCart } from "react-use-cart";
-import '../App.css';
 import { CheckoutButton } from '../App.js';
+
+/* The Cart component of the menu (lower half of first page) */
 
 /* A lot of the following code came from this lovely resource:
 https://www.npmjs.com/package/react-use-cart
@@ -30,7 +31,7 @@ const Cart = () => {
                                 return(
                                     <tr key={index}>
                                         <td>
-                                            <img className="Cart" src={item.img} style={{height: '6rem'}} />
+                                            <img src={item.img} style={{height: '6rem'}} />
                                         </td>
                                         <td>{item.title}</td>
                                         <td>{item.price}</td>

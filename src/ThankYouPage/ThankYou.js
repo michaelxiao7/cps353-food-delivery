@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ThankYou.css';
-import { MenuButton } from './App.js';
+import { MenuButton } from './../App.js';
 
 class ThankYou extends Component {
 
